@@ -1,0 +1,38 @@
+.navbar {
+    display:flex;
+    flex-direction: row;
+    background: black;
+}
+#logo{
+    height: 50px;
+    width: 50px;
+}
+.navbar-divtexto{
+    margin:auto auto auto 0;
+    
+}
+.navbar-divlogo{
+    margin:auto 50px auto 50px;
+}
+
+.navbar-texto{
+    margin: 50px;
+    text-decoration: none;
+    color:white;
+}
+@media screen and (max-width: 800px) {
+    .navbar-divlogo{
+        margin:0;
+    }
+    .navbar-divtexto{
+        width: 100%;
+        margin:0;
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .navbar-texto{
+        margin:0;
+    }
+}
+
