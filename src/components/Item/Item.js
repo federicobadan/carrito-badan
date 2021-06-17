@@ -3,18 +3,18 @@ import './Item.css'
 
 export const Item = props => {
 
-    const {id, titulo, precio, descripcion, img, stock, alt} = props;
+    const { data } = props;
     return<>
         <div className='div-card'>
             <div>
-                <img className='img-producto' src={img} alt={alt}></img>
+                <img className='img-producto' src={data.img} ></img>
             </div>
             <div>
-                <h1>{titulo}</h1>
-                <p>{descripcion}</p>
-                <p>Precio: ${precio}</p>
-                <p>Stock: {stock}</p>
-                <p>Id: {id}</p>
+                <h1>{data.titulo}</h1>
+                <p>{data.descripcion}</p>
+                <p>Precio: ${data.precio}</p>
+                <p>Stock: {data.stock}</p>
+                <p>Id: {data.id}</p>
             </div>
         </div>
     </>
