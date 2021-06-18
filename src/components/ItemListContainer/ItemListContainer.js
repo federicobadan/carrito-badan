@@ -53,7 +53,7 @@ import imagen5 from './img/placas-de-sonido/placa-de-sonido.png'
                 ), 2000)
             })
         }
-        export const ItemListContainer = props => {
+        export const ItemListContainer = () => {
             const [data, setData] = useState([]);
             
             useEffect( () => {

@@ -1,9 +1,7 @@
 import React from 'react';
 import './Item.css'
 
-export const Item = props => {
-
-    const { data } = props;
+export const Item = ({ data }) => {
     return<>
         <div className='div-card'>
             <div>
