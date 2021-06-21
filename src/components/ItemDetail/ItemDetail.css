@@ -1,0 +1,16 @@
+.div-card-detail{
+    display:flex;
+    flex-direction: row;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 90%;
+    margin: 50px auto 50px auto;
+}
+.detail-text{
+    font-size: 1.5em;
+}
+.detail-div{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -4,7 +4,7 @@ import { Item } from '../Item/Item.js'
 
 export const ItemList = ({ data }) => {
     return<>
-            <div>
+            <div className='card-container'>
                 {data.map((data)=><Item
                 key={data.id}
                 data={data} 
