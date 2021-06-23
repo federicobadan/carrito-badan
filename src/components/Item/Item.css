@@ -5,8 +5,27 @@ h1{
     width: 300px;
     border: 1px solid black;
     border-radius: 20px;
+    margin: 25px auto 25px auto;
 }
 .img-producto{
     width: 200px;
     height: 200px;
+}
+.link{
+    text-decoration: none;
+    color:black;
+}
+.div-img{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.card-text{
+    text-align: end;
+    font-size: 1.25em;
+    width: 90%;
+    margin: 25px auto 25px auto;
+}
+.card-title{
+    text-align: center;
 }

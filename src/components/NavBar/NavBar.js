@@ -1,19 +1,20 @@
 import React from 'react';
 import './NavBar.css'
 import {CartWidget} from '../CartWidget/CartWidget.js'
+import { Link } from 'react-router-dom';
 
 export const NavBar = ()=>{
-
+    const perifericos = 'perifericos'
+    const componentes = 'componentes'
     return <>
     <nav className='navbar'>
         <div className='navbar-divlogo'>
-            <img id="logo" src='../logo.png' alt='logo'></img>
+            <Link to={'/'}><img id="logo" src='../logo.png' alt='logo'></img></Link>
         </div>
         <div className='navbar-divtexto'>
-            <a className='navbar-texto' href='index.html'>Inicio</a>
-            <a className='navbar-texto' href='index.html'>Categoria 1</a>
-            <a className='navbar-texto' href='index.html'>Categoria 2</a>
-            <a className='navbar-texto' href='index.html'>Contacto</a>
+            <Link className='navbar-texto' to={'/'}>Inicio</Link>
+            <Link className='navbar-texto' to={'/categoria/' +perifericos}>Periféricos</Link>
+            <Link className='navbar-texto' to={'/categoria/' +componentes}>Componentes</Link>
         </div>
         <CartWidget />
     </nav>
