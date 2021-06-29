@@ -1,27 +1,31 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './ItemCount.css'
 
 
-export const ItemCount = ()=>{
-    const [contador, setContador] = useState(0);
-    const [stock, setStock] = useState(25)
-    function sumar (){
-        setContador(contador + 1);
-        setStock(stock - 1);       
-        
+export const ItemCount = (data)=>{
+    const {stock, valorInicial, cantidadProducto, onAdd} = data;
+
+    const [count, setCount] = useState(valorInicial > cantidadProducto ? valorInicial : cantidadProducto);
+
+    const handleChangeCount = () => {
+        setCount(count+1);
     }
-    function restar () {
-        setContador(contador - 1);
-        setStock(stock + 1);
+    const handleChangeDiscount = () => {
+        setCount(count-1);
     }
     return <>
         <div className='card'>
-            <h1 className='card-title'>Camisa</h1>
-            <p>Stock: {stock}</p>
             <div className='card-buttons'>
-                <button disabled={contador===0} onClick={e => restar()} className='btn-modificador'>-</button> <p>{contador}</p> <button disabled={!stock>0} onClick={e => sumar()} className='btn-modificador'>+</button>
+                <button  onClick={e => handleChangeDiscount()} 
+                        disabled={count === valorInicial ? true : false} 
+                        className='btn-modificador'>-</button> 
+                <p>{count}</p> 
+                <button onClick={e => handleChangeCount()} 
+                        disabled={count < stock ? false : true} 
+                        className='btn-modificador'>+</button>
             </div>
-            <button disabled={contador===0} className='btn-agregar'>Agregar al carrito</button>
+            <button onClick={() => onAdd(count)}
+                    disabled={stock === 0 ? true : false}>Agregar al carrito</button>
         </div>
     </>
 

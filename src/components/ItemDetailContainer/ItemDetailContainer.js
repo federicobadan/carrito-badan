@@ -13,7 +13,7 @@ const getItems = () => {
         setTimeout(() => resolve (
             [
                 {
-                    id:0, 
+                    id:'0', 
                     titulo: "Mouse Hyperx Pulsefire Core rgb HX-MC004B", 
                     precio:456, 
                     img: `${imagen1}`,
@@ -23,7 +23,7 @@ const getItems = () => {
                     categoria: 'perifericos'
                   },
                 {
-                    id:1, 
+                    id:'1', 
                     titulo: "Teclado Gamer Xtrike-me Gk-979 Qwerty Blue Inglés",
                     precio:1340,
                     img: `${imagen2}`,
@@ -33,7 +33,7 @@ const getItems = () => {
                     categoria: 'perifericos'
                 },
                 {
-                    id:2,
+                    id:'2',
                     titulo: "Placa de Video Evga RTX 3070 XC3 Ultra 8Gb",
                     precio:76000,
                     img:`${imagen3}`,
@@ -43,7 +43,7 @@ const getItems = () => {
                     categoria: 'componentes'
                 },
                 {
-                    id:3,
+                    id:'3',
                     titulo:"Motherboard Gigabyte S1151 H310M M2",
                     precio:58000,
                     img: `${imagen4}`,
@@ -53,7 +53,7 @@ const getItems = () => {
                     categoria: 'componentes'
                 },
                 {
-                    id:4,
+                    id:'4',
                     titulo:"Placa de sonido Sound Blaster Audigy FX PCIe 5.1",
                     precio:20000,
                     img: `${imagen5}`,
@@ -72,14 +72,14 @@ const getItems = () => {
 export const ItemDetailContainer = () => {
     const [data, setData] = useState([]);
     const {itemID} = useParams();
-            
     useEffect( () => {
         getItems()
         .then(response => {
-            const filtrado = response.filter((element) => element.id == itemID);
+            const filtrado = response.filter((element) => element.id === itemID);
             setData(filtrado[0]);
         });
     }, [itemID]);
+
     return<>
             <ItemDetail data={data}/>
         </>
