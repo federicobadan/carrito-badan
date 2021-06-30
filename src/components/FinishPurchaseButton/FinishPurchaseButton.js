@@ -8,9 +8,9 @@ export const FinishPurchaseButton = props =>{
                 <Link 
                     to={'/cart'}>
                     <p className='btn-finish'>Terminar compra</p></Link>
-                <Link 
+                <button 
                     onClick={() => clickCancelar(false)}>
-                    <p className='btn-finish'>Cancelar</p></Link>
+                    <p className='btn-finish'>Cancelar</p></button>
             </div>
         </div>
 }
